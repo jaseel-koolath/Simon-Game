@@ -4,9 +4,7 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-$('.OK').click(function() {
-    $('#rules').hide();
-})
+
 function nextSequence() {
     userClickedPattern = [];
     level++;
@@ -19,12 +17,23 @@ function nextSequence() {
 }
 
 $('body').keypress(function() {
+    $('.para').hide();
     if(!started){
         nextSequence();
         started = true;
     }
         
 })
+
+$('#OK').click(function() {
+    $('.para').hide();
+    if(!started){
+        nextSequence();
+        started = true;
+    }    
+})
+
+
 
 $('.btn').click(function() {
     userChosenColour = this.id;
@@ -64,7 +73,7 @@ function gameOver(){
     }, 200);
     sound = new Audio("sounds/wrong.mp3");
     sound.play();
-    $('#level-title').text("Game Over, Press any Key to restart");
+    $('#level-title').text("Game Over, Press any Key or start button to restart");
     startOver();
 }
 

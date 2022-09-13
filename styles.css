@@ -56,7 +56,12 @@ body {
   color: white;
 }
 
-.OK {
-  height: 50px;
-  width: 100px;
+#OK {
+  margin: 25px;
+  display: inline-block;
+  height: 100px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 10%;
+  
 }
